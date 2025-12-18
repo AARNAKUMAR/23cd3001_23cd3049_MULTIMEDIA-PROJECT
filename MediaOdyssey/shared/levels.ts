@@ -1,0 +1,278 @@
+import type { Level, Badge, Quiz } from './types';
+
+// Export types for use in other files
+export type { Level, Badge, Quiz, QuizQuestion } from './types';
+
+// Badges Data - 14 thematic badges for each era
+export const badgesData: Badge[] = [
+    {
+        id: 'badge-1',
+        name: '🎨 Cave Artist',
+        description: 'Master of prehistoric visual storytelling',
+        imagePath: '/badges/badge-1.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-2',
+        name: '📜 Script Scholar',
+        description: 'Expert in ancient writing systems',
+        imagePath: '/badges/badge-2.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-3',
+        name: '🗣️ Oral Tradition Keeper',
+        description: 'Guardian of spoken wisdom',
+        imagePath: '/badges/badge-3.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-4',
+        name: '📰 Print Pioneer',
+        description: 'Revolutionary of mass communication',
+        imagePath: '/badges/badge-4.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-5',
+        name: '📸 Photography Visionary',
+        description: 'Capturing moments in time',
+        imagePath: '/badges/badge-5.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-6',
+        name: '📞 Telecommunication Expert',
+        description: 'Connecting voices across distances',
+        imagePath: '/badges/badge-6.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-7',
+        name: '📻 Radio Wave Master',
+        description: 'Broadcasting to the masses',
+        imagePath: '/badges/badge-7.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-8',
+        name: '🎬 Cinema Storyteller',
+        description: 'Moving pictures, moving hearts',
+        imagePath: '/badges/badge-8.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-9',
+        name: '📺 Television Broadcaster',
+        description: 'Bringing the world into homes',
+        imagePath: '/badges/badge-9.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-10',
+        name: '💻 Digital Pioneer',
+        description: 'Navigating the information age',
+        imagePath: '/badges/badge-10.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-11',
+        name: '🌐 Internet Explorer',
+        description: 'Connecting the global village',
+        imagePath: '/badges/badge-11.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-12',
+        name: '📱 Mobile Revolutionary',
+        description: 'Communication in your pocket',
+        imagePath: '/badges/badge-12.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-13',
+        name: '🎮 Social Media Influencer',
+        description: 'Shaping digital conversations',
+        imagePath: '/badges/badge-13.png',
+        unlocked: false,
+    },
+    {
+        id: 'badge-14',
+        name: '🧠 Future Visionary',
+        description: 'Pioneer of tomorrow\'s communication',
+        imagePath: '/badges/badge-14.png',
+        unlocked: false,
+    },
+];
+
+// Levels Data - 14 days of media evolution
+export const levelsData: Level[] = [
+    {
+        day: 1,
+        label: 'Dawn of Communication',
+        icon: '🎨',
+        description: 'Journey through prehistoric caves where humanity first captured stories in ochre and charcoal. Experience the birth of visual storytelling through cave paintings, the power of oral traditions around tribal fires, and witness the revolutionary invention of cuneiform tablets and Egyptian hieroglyphs.',
+        videoUrl: '/videos/day1.mp4',
+        funFacts: [
+            'The oldest known cave paintings, like those found in Indonesia, are over 44,000 years old, depicting hunting scenes and mythical beings.',
+            'A single, complete papyrus scroll, such as one containing The Odyssey, could be up to 100 feet (30 meters) long, requiring two hands to unroll.',
+            'The Mesopotamian Cuneiform script contained over 1,000 distinct characters and was used for more than 3,000 years.',
+        ],
+    },
+    {
+        day: 2,
+        label: 'Rise of Alphabets',
+        icon: '📜',
+        description: 'Discover the revolutionary Phoenician alphabet that democratized writing with just 22 characters. Explore Chinese oracle bones used for divination, the magnificent Library of Alexandria with its papyrus scrolls, and the Roman codex that transformed how we organize information.',
+        videoUrl: '/videos/day2.mp4',
+        funFacts: [
+            'The Phoenician alphabet, developed around 1200 BCE, had only 22 letters, all consonants. It is the ancestor of almost all modern alphabets, including Latin, Greek, and Hebrew.',
+            'The codex (modern book format) largely replaced the scroll because it was perfect for early Christians who needed to quickly flip between different passages of the Bible.',
+            'The English word "book" comes from the Old Germanic word "bōk", which means "beech tree," because early Germanic peoples would carve runes onto beech wood tablets.',
+        ],
+    },
+    {
+        day: 3,
+        label: 'Classical & Medieval Writing',
+        icon: '🗣️',
+        description: 'Experience the tactile Greek wax tablets used for debate and learning, the monumental Roman inscriptions carved in stone to proclaim eternal glory, the painstaking illuminated manuscripts created by medieval monks, and the visual storytelling of the Bayeux Tapestry.',
+        videoUrl: '/videos/day3.mp4',
+        funFacts: [
+            'Crafting a single, hand-written medieval Bible required the prepared skins (vellum) of over 200 sheep or calves.',
+            'Roman inscriptions used V-shaped cuts that created a play of light and shadow, making them legible from a distance and asserting the permanence of the Roman Empire.',
+            'The famous Bayeux Tapestry, which chronicles the Norman Conquest of 1066, is technically not a tapestry at all. It is a massive, 230-foot-long embroidery.',
+        ],
+    },
+    {
+        day: 4,
+        label: 'The Print Revolution',
+        icon: '📰',
+        description: 'Witness Gutenberg\'s revolutionary printing press with movable type that changed the world forever. See the birth of newspapers in London coffee houses, revolutionary pamphlets that sparked political change, and practical almanacs that guided daily life.',
+        videoUrl: '/videos/day4.mp4',
+        funFacts: [
+            'A skilled medieval monk could copy about 40 pages per day. Gutenberg\'s printing press could produce 3,600 pages in the same time.',
+            'Just 50 years after the printing press was invented in 1450, over 20 million books had been printed throughout Europe, more than all manuscripts in the previous millennium.',
+            'The earliest newspapers of the 17th century did not have headlines. They simply began with a date and city of origin, presenting news as a letter from a distant place.',
+        ],
+    },
+    {
+        day: 5,
+        label: 'Mass Media & Industry',
+        icon: '📸',
+        description: 'Experience the thundering power of steam-driven printing presses producing thousands of pages per hour. Witness the birth of the Penny Press making news accessible to all, the telegraph shrinking the world with instant communication, and mass-reproduced engravings bringing visual news to the public.',
+        videoUrl: '/videos/day5.mp4',
+        funFacts: [
+            'The first official telegraph message, sent by Samuel Morse in 1844, was "What hath God wrought." By the 1870s, a transatlantic cable could send a message from London to New York in under 10 minutes.',
+            'The steam-powered rotary press, invented in 1843, could print on both sides of a continuous roll of paper, producing over 8,000 sheets per hour.',
+            'The "Penny Press" newspapers of the 1830s were the first to be funded primarily by advertising rather than expensive subscriptions, making news accessible to the working class.',
+        ],
+    },
+    {
+        day: 6,
+        label: 'Electronic & Personal Media',
+        icon: '📞',
+        description: 'Hear the first telephone call connecting voices across distances, experience Edison\'s phonograph capturing sound for the first time, listen to music on a gramophone in a 1920s parlor, and feel the satisfying clack of a typewriter mechanizing the written word.',
+        videoUrl: '/videos/day6.mp4',
+        funFacts: [
+            'The first sound ever captured and played back was Thomas Edison reciting "Mary Had a Little Lamb" on his phonograph in 1877.',
+            'The QWERTY keyboard layout, patented in 1874, was intentionally designed to slow typists down. Placing common letter pairs far apart prevented the machine\'s keys from jamming.',
+            'The first telephone call was made by Alexander Graham Bell on March 10, 1876. The first words were: "Mr. Watson—Come here—I want to see you."',
+        ],
+    },
+    {
+        day: 7,
+        label: 'The Broadcast Era',
+        icon: '📻',
+        description: 'Watch silent films in ornate movie palaces with live piano accompaniment, experience the revolutionary arrival of "talkies" with synchronized sound, gather around a wooden radio for fireside chats and dramas, and enjoy the colorful world of comic strips in Sunday newspapers.',
+        videoUrl: '/videos/day7.mp4',
+        funFacts: [
+            'The 1938 radio broadcast of "The War of the Worlds" by Orson Welles was so convincing that it caused a nationwide panic, with thousands believing a real Martian invasion was happening.',
+            'The movie term "blockbuster" originated from WWII-era bombs powerful enough to destroy an entire city block. It later described films so popular that lines would stretch around the block.',
+            'The first image transmitted on television was Felix the Cat. In 1928, RCA used a small Felix the Cat statue to conduct their experimental broadcasts.',
+        ],
+    },
+    {
+        day: 8,
+        label: 'Media, War & Persuasion',
+        icon: '🎬',
+        description: 'Watch dramatic WWII newsreels bringing current events to movie theaters, analyze powerful propaganda posters designed for instant emotional impact, witness the arrival of television in 1950s suburban homes, and hear catchy advertising jingles embedding brands into consciousness.',
+        videoUrl: '/videos/day8.mp4',
+        funFacts: [
+            'In 1950, only 9% of American homes had a television. Just five years later, in 1955, the number had skyrocketed to 64%. By 1960, it was nearly 90%.',
+            'The 1960 Kennedy-Nixon debate was a turning point. Radio listeners thought Nixon won, but the larger TV audience saw a calm Kennedy and a sweating Nixon, declaring Kennedy the winner.',
+            'The first-ever singing radio commercial aired on Christmas Eve, 1926, for Wheaties cereal. The catchy "jingle" was so successful it saved the brand from being discontinued.',
+        ],
+    },
+    {
+        day: 9,
+        label: 'The Technicolor Age',
+        icon: '📺',
+        description: 'Experience the breathtaking shift from black and white to brilliant color television, watch Saturday morning cartoons creating lifelong connections to characters, listen to dramatic radio soap operas targeting specific audiences, and flip through glossy magazines filled with iconic photography.',
+        videoUrl: '/videos/day9.mp4',
+        funFacts: [
+            'In 1964, only 3% of American households had a color TV. By 1972, that number had jumped to 50%, officially marking the end of the black-and-white era.',
+            'One of the main drivers of color TV sales was NBC\'s "Walt Disney\'s Wonderful World of Color," which showcased vibrant nature documentaries and cartoons.',
+            'The rise of glossy, full-color magazines like Life and Ebony in the mid-20th century created the golden age of photojournalism, using powerful images to tell stories.',
+        ],
+    },
+    {
+        day: 10,
+        label: 'The Digital Dawn',
+        icon: '💻',
+        description: 'Stand in a 1970s computer lab watching dot-matrix printers output raw data, play the revolutionary Pong game where you control pixels for the first time, navigate the stark early webpages with blue hyperlinks, and experience the magic of "You\'ve Got Mail" with instant email communication.',
+        videoUrl: '/videos/day10.mp4',
+        funFacts: [
+            'The "@" symbol was chosen by Ray Tomlinson in 1971 for email to separate a user\'s name from their server. He chose it because it was uncommon and wouldn\'t appear in anyone\'s name.',
+            'The first commercial arcade game, Pong, was tested in a California tavern. On its first night, it stopped working because the coin mechanism was so jammed full of quarters.',
+            'The very first photo uploaded to the World Wide Web was a picture of "Les Horribles Cernettes," a comedy band made up of employees at CERN, where the web was invented.',
+        ],
+    },
+    {
+        day: 11,
+        label: 'Web 2.0 Revolution',
+        icon: '🌐',
+        description: 'Explore Wikipedia\'s collaborative knowledge created by volunteers worldwide, scroll through early Facebook feeds seeing the rise of personal branding, watch grainy user-generated YouTube videos democratizing television, and read passionate blog posts giving voice to individual publishers.',
+        videoUrl: '/videos/day11.mp4',
+        funFacts: [
+            'The first video ever uploaded to YouTube (April 23, 2005) was an 18-second clip called "Me at the zoo," featuring co-founder Jawed Karim at an elephant enclosure.',
+            'Facebook\'s iconic "Like" button was originally developed under the name "Awesome." The engineering team debated for months before settling on "Like."',
+            'In a 2005 Nature study, Wikipedia\'s accuracy was remarkably close to Encyclopædia Britannica, with an average of 4 errors per article versus 3 for Britannica.',
+        ],
+    },
+    {
+        day: 12,
+        label: 'Mobile Revolution',
+        icon: '📱',
+        description: 'Type abbreviated messages on a numeric keypad with T9 predictive text, decode emoji messages creating a new visual language, apply Instagram filters to create perfectly curated photo grids, and swipe through the addictive, algorithm-driven vertical scroll of TikTok.',
+        videoUrl: '/videos/day12.mp4',
+        funFacts: [
+            'The world\'s first SMS text message was sent on December 3, 1992, from an engineer\'s computer to a director\'s mobile phone. It read: "Merry Christmas."',
+            'The word emoji is Japanese, from e ("picture") + moji ("character"). The original set of 176 emojis created in 1999 is now in New York\'s Museum of Modern Art.',
+            'When the Apple App Store launched in 2008, it had just 500 apps. Today, there are millions of apps, and over 200 billion apps are downloaded annually worldwide.',
+        ],
+    },
+    {
+        day: 13,
+        label: 'Immersive Media',
+        icon: '🎮',
+        description: 'Put on a VR headset and stand in a fully immersive virtual classroom, view AR worksheets where 3D models pop out of paper through your phone, listen to intimate podcast conversations on-demand through earbuds, and watch livestreams where creators interact with their audience in real-time.',
+        videoUrl: '/videos/day13.mp4',
+        funFacts: [
+            'The term "podcast" was coined in 2004 by blending "iPod" and "broadcast." Today, there are over 3 million active podcasts in more than 100 languages.',
+            'The first-ever VR headset, called "The Sword of Damocles," was created in 1968. It was so enormous and heavy that it had to be suspended from the ceiling by a mechanical arm.',
+            'Pokémon Go was downloaded over 500 million times in its first two months in 2016 and caused a measurable increase in physical activity and, unfortunately, traffic accidents.',
+        ],
+    },
+    {
+        day: 14,
+        label: 'Future of Communication',
+        icon: '🧠',
+        description: 'Speak to an AI that generates complete essays in seconds, experience a perfectly personalized media feed that knows what you need before you do, connect through a direct neural interface where thoughts transmit as pure sensory experience, and record holographic memories as multi-sensory, interactive experiences.',
+        videoUrl: '/videos/day14.mp4',
+        funFacts: [
+            'In 2025, the total amount of data created worldwide is projected to be 181 zettabytes. To store that on Blu-ray discs, your stack would reach the moon 23 times.',
+            'A modern AI image generator can create a completely novel, high-resolution image from a simple text description in under 60 seconds—a task that would take a human artist hours or days.',
+            'Experimental Brain-Computer Interfaces can decode thoughts into speech at over 60 words per minute, approaching the speed of natural conversation.',
+        ],
+    },
+];

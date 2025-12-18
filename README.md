@@ -79,7 +79,7 @@ MediaOdyssey/
 ## 👥 Authors
 
 - **23cd3001** - Aarna Kumar
-- **23cd3049** - [Contributor Name]
+- **23cd3049** - Tishya Jha
 
 ## 📝 License
 
